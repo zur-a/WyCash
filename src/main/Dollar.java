@@ -2,15 +2,22 @@ package main;
 
 public class Dollar {
 
-	public int amount;
+	private int amount;
 
-	public Dollar(int i) {
-		// TODO Auto-generated constructor stub
+	public int getAmount() {
+		return amount;
 	}
 
-	public void times(int i) {
-		// TODO Auto-generated method stub
-		
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public Dollar(int amount) {
+		this.amount = amount;
+	}
+
+	public Dollar times(int multiplier) {
+		return new Dollar(amount * multiplier);
 	}
 
 }
