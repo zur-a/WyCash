@@ -1,27 +1,11 @@
 package main;
 
-public class Dollar {
-
-	private int amount;
-
-	public int getAmount() {
-		return amount;
-	}
-
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
+public class Dollar extends Currency {
 
 	public Dollar(int amount) {
-		this.amount = amount;
+		super(amount);
 	}
 
-	public Dollar times(int multiplier) {
-		return new Dollar(amount * multiplier);
-	}
-	
-	public boolean equals(Object object) {
-		Dollar value = (Dollar) object;
-		return amount == value.amount;
-	}
+
+
 }
