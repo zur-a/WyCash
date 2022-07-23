@@ -10,7 +10,7 @@ public class Currency {
 
 	public boolean equals(Object object) {
 		Currency value = (Currency) object;
-		return amount == value.amount;
+		return amount == value.amount && getClass().equals(value.getClass());
 	}
 	
 	public Currency times(int multiplier) {

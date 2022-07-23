@@ -24,9 +24,20 @@ public class ArithmeticTest {
 	}
 	
 	@Test
-	public void equalityTest() {
+	public void dollarEqualityTest() {
 		assertTrue(new Dollar(5).equals(new Dollar(5)));
 		assertFalse(new Dollar(5).equals(new Dollar(6)));
+	}
+	
+	@Test
+	public void francEqualityTest() {
+		assertTrue(new Franc(15).equals(new Franc(15)));
+		assertFalse(new Franc(2).equals(new Franc(16)));
+	}
+	
+	@Test
+	public void compareDollarsToFrancs() {
+		assertFalse(new Dollar(5).equals(new Franc(5)));
 	}
 	
 	

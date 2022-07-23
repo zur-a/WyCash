@@ -6,6 +6,8 @@ public class Dollar extends Currency {
 		super(amount);
 	}
 
-
+	public Currency times(int multiplier) {
+		return new Dollar(amount * multiplier);	
+	}
 
 }
