@@ -5,8 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import main.Currency;
-import main.Dollar;
-import main.Franc;
 
 public class WyCashTest {
 
@@ -45,10 +43,5 @@ public class WyCashTest {
 	public void currencyTest() {
 		assertEquals("USD", Currency.dollar(1).currency());
 		assertEquals("CHF", Currency.franc(1).currency());
-	}
-	
-	@Test
-	public void differentClassEqualityTest() {
-		assertTrue(new Currency(10, "CHF").equals(new Franc(10, "CHF")));
 	}
 }

@@ -15,21 +15,22 @@ public class Currency {
 		return amount == value.amount && currency().equals(value.currency());
 	}
 	
-	public Currency times(int amount) {
-		return null;
-		
+	public Currency times(int multiplier) {
+		return new Currency(amount * multiplier, currency);	
 	}
+
 	
 	public static Currency dollar(int amount) {
-		return new Dollar(amount, "USD");
+		return new Currency(amount, "USD");
 	}
 	
 	public static Currency franc(int amount) {
-		return new Franc(amount, "CHF");
+		return new Currency(amount, "CHF");
 	}
 	
 	public String currency() {
 		return currency;
 	}
+	
 
 }
