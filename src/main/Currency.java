@@ -3,9 +3,11 @@ package main;
 public abstract class Currency {
 	
 	protected int amount;
+	protected String currency;
 	
-	public Currency(int amount) {
+	public Currency(int amount, String currency) {
 		this.amount = amount;
+		this.currency = currency;
 	}
 
 	public boolean equals(Object object) {
@@ -16,13 +18,15 @@ public abstract class Currency {
 	public abstract Currency times(int multiplier);
 	
 	public static Currency dollar(int amount) {
-		return new Dollar(amount);
+		return new Dollar(amount, "USD");
 	}
 	
 	public static Currency franc(int amount) {
-		return new Franc(amount);
+		return new Franc(amount, "CHF");
 	}
 	
-	public abstract String currency();
+	public String currency() {
+		return currency;
+	}
 
 }
