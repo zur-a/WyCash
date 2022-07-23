@@ -22,5 +22,7 @@ public abstract class Currency {
 	public static Currency franc(int amount) {
 		return new Franc(amount);
 	}
+	
+	public abstract String currency();
 
 }

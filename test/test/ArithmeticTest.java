@@ -40,4 +40,10 @@ public class ArithmeticTest {
 	public void compareDollarsToFrancs() {
 		assertFalse(Currency.dollar(5).equals(Currency.franc(5)));
 	}
+	
+	@Test
+	public void currencyTest() {
+		assertEquals("USD", Currency.dollar(1).currency());
+		assertEquals("CHF", Currency.franc(1).currency());
+	}
 }
