@@ -1,6 +1,6 @@
 package main;
 
-public class Currency {
+public abstract class Currency {
 	
 	protected int amount;
 	
@@ -13,8 +13,10 @@ public class Currency {
 		return amount == value.amount && getClass().equals(value.getClass());
 	}
 	
-	public Currency times(int multiplier) {
-		return new Currency(amount * multiplier);
+	public abstract Currency times(int multiplier);
+	
+	public static Currency dollar(int amount) {
+		return new Dollar(amount);
 	}
 
 }
