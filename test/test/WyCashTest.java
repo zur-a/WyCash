@@ -60,6 +60,14 @@ public class WyCashTest {
 	}
 	
 	@Test
+	public void reduceDifferentCurrencyTest() {
+		Exchange bank = new Exchange();
+		bank.addRate("CHF", "USD", 2);
+		Currency result = bank.reduce(Currency.franc(2), "USD");
+		assertEquals(Currency.dollar(1), result);
+	}
+	
+	@Test
 	public void dollarEqualityTest() {
 		assertTrue(Currency.dollar(5).equals(Currency.dollar(5)));
 		assertFalse(Currency.dollar(5).equals(Currency.dollar(6)));

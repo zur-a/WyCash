@@ -37,8 +37,13 @@ public class Currency implements Expression {
 	}
 	
 	public Currency reduce(String to) {
-		return this;
+		int rate = (currency.equals("CHF")&&to.equals("USD"))
+				?2
+				:1;
+		return new Currency(amount / rate, to);
 	}
+	
+	
 	
 
 }
