@@ -31,6 +31,10 @@ public class Currency {
 	public String currency() {
 		return currency;
 	}
+
+	public Currency plus(Currency addend) {
+		return new Currency(amount + addend.amount, currency);
+	}
 	
 
 }

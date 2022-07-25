@@ -23,6 +23,12 @@ public class WyCashTest {
 	}
 	
 	@Test
+	public void sameCurrencyAditionTest() {
+		Currency sum = Currency.dollar(4).plus(Currency.dollar(6));
+		assertEquals(Currency.dollar(10), sum);
+	}
+	
+	@Test
 	public void dollarEqualityTest() {
 		assertTrue(Currency.dollar(5).equals(Currency.dollar(5)));
 		assertFalse(Currency.dollar(5).equals(Currency.dollar(6)));
