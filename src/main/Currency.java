@@ -36,5 +36,9 @@ public class Currency implements Expression {
 		return new Sum(this, addend);
 	}
 	
+	public Currency reduce(String to) {
+		return this;
+	}
+	
 
 }
