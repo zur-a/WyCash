@@ -8,6 +8,7 @@ import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 import main.Currency;
 import main.Expression;
 import main.Exchange;
+import main.Sum;
 
 public class WyCashTest {
 
@@ -28,10 +29,19 @@ public class WyCashTest {
 	@Test
 	public void sameCurrencyAditionTest() {
 		Currency value = Currency.dollar(5);
-		Expression sum = Value.plus(value);
+		Expression sum = value.plus(value);
 		Exchange bank = new Exchange();
 		Currency reduced = bank.reduce(sum, "USD");
 		assertEquals(Currency.dollar(10), reduced);
+	}
+	
+	@Test
+	public void plusMustReturnsSum() {
+		Currency value = Currency.dollar(5);
+		Expression result = value.plus(value);
+		Sum sum = (Sum) result;
+		assertEquals(value, sum.augend);
+		assertEquals(value, sum.addend);
 	}
 	
 	
