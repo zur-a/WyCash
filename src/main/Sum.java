@@ -5,6 +5,12 @@ public class Sum implements Expression {
 	public Currency addend;
 	
 	public Sum(Currency augend, Currency addend) {
-		
+		this.addend= addend;
+		this.augend = augend;
+	}
+	
+	public Currency reduce(String to) {
+		int amount = augend.amount + addend.amount;
+		return new Currency(amount, to);
 	}
 }

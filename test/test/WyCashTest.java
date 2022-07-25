@@ -44,7 +44,13 @@ public class WyCashTest {
 		assertEquals(value, sum.addend);
 	}
 	
-	
+	@Test
+	public void reduceSumTest() {
+		Expression sum = new Sum(Currency.dollar(2), Currency.dollar(3));
+		Exchange bank = new Exchange();
+		Currency result = bank.reduce(sum, "USD");
+		assertEquals(Currency.dollar(5), result);
+	}
 	
 	@Test
 	public void dollarEqualityTest() {
