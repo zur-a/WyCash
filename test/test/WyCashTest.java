@@ -4,7 +4,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 import main.Currency;
+import main.Expression;
+import main.Exchange;
 
 public class WyCashTest {
 
@@ -24,9 +27,14 @@ public class WyCashTest {
 	
 	@Test
 	public void sameCurrencyAditionTest() {
-		Currency sum = Currency.dollar(4).plus(Currency.dollar(6));
-		assertEquals(Currency.dollar(10), sum);
+		Currency value = Currency.dollar(5);
+		Expression sum = Value.plus(value);
+		Exchange bank = new Exchange();
+		Currency reduced = bank.reduce(sum, "USD");
+		assertEquals(Currency.dollar(10), reduced);
 	}
+	
+	
 	
 	@Test
 	public void dollarEqualityTest() {

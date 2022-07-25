@@ -1,6 +1,6 @@
 package main;
 
-public class Currency {
+public class Currency implements Expression {
 	
 	protected int amount;
 	protected String currency;
@@ -32,7 +32,7 @@ public class Currency {
 		return currency;
 	}
 
-	public Currency plus(Currency addend) {
+	public Expression plus(Currency addend) {
 		return new Currency(amount + addend.amount, currency);
 	}
 	
