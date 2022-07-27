@@ -36,10 +36,8 @@ public class Currency implements Expression {
 		return new Sum(this, addend);
 	}
 	
-	public Currency reduce(String to) {
-		int rate = (currency.equals("CHF")&&to.equals("USD"))
-				?2
-				:1;
+	public Currency reduce(Exchange bank, String to) {
+		int rate = bank.rate(currency, to);
 		return new Currency(amount / rate, to);
 	}
 	

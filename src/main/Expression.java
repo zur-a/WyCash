@@ -2,6 +2,6 @@ package main;
 
 public interface Expression {
 
-	Currency reduce(String to);
+	Currency reduce(Exchange bank, String to);
 
 }
