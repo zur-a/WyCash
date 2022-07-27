@@ -15,7 +15,7 @@ public class Currency implements Expression {
 		return amount == value.amount && currency().equals(value.currency());
 	}
 	
-	public Currency times(int multiplier) {
+	public Expression times(int multiplier) {
 		return new Currency(amount * multiplier, currency);	
 	}
 
@@ -32,7 +32,7 @@ public class Currency implements Expression {
 		return currency;
 	}
 
-	public Expression plus(Currency addend) {
+	public Expression plus(Expression addend) {
 		return new Sum(this, addend);
 	}
 	
