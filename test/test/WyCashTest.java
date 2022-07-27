@@ -36,6 +36,16 @@ public class WyCashTest {
 	}
 	
 	@Test
+	public void differentCurrencyAditionTest() {
+		Expression sevenDollars = Currency.dollar(7);
+		Expression sixFrancs = Currency.franc(6);
+		Exchange bank = new Exchange();
+		bank.addRate("CHF", "USD", 2);
+		Currency result = bank.reduce(sevenDollars.plus(sixFrancs), "USD");
+		assertEquals(Currency.dollar(10), result);
+	}
+	
+	@Test
 	public void plusMustReturnsSum() {
 		Currency value = Currency.dollar(5);
 		Expression result = value.plus(value);
