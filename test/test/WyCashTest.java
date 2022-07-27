@@ -37,8 +37,8 @@ public class WyCashTest {
 	
 	@Test
 	public void differentCurrencyAditionTest() {
-		Expression sevenDollars = Currency.dollar(7);
-		Expression sixFrancs = Currency.franc(6);
+		Currency sevenDollars = Currency.dollar(7);
+		Currency sixFrancs = Currency.franc(6);
 		Exchange bank = new Exchange();
 		bank.addRate("CHF", "USD", 2);
 		Currency result = bank.reduce(sevenDollars.plus(sixFrancs), "USD");
